@@ -140,7 +140,7 @@ var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "33%"
 
 // define images
 	var images = [
-		/*"./gif/gif_1.png",
+		"./gif/gif_1.png",
 		"./gif/gif_2.png",
 		"./gif/gif_3.png",
 		"./gif/gif_4.png",
@@ -148,9 +148,9 @@ var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "33%"
 		"./gif/gif_6.png",
 		"./gif/gif_7.png",
 		"./gif/gif_8.png",
-		"./gif/gif_9.png",*/
+		"./gif/gif_9.png",
 		"./gif/gif_10.png",
-		"./gif/gif_11.png",
+		"./gif/gif_11.png"/*,
 		"./gif/gif_12.png",
 		"./gif/gif_13.png",
 		"./gif/gif_14.png",
@@ -170,9 +170,32 @@ var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "33%"
 		"./gif/gif_28.png",
 		"./gif/gif_29.png",
 		"./gif/gif_30.png",
-		"./gif/gif_31.png"/*,
+		"./gif/gif_31.png",
 		"./gif/gif_32.png",
-		"./gif/gif_33.png"*/
+		"./gif/gif_33.png",
+		"./gif/gif_34.png",
+		"./gif/gif_35.png",
+		"./gif/gif_36.png",
+		"./gif/gif_37.png",
+		"./gif/gif_38.png",
+		"./gif/gif_39.png",
+		"./gif/gif_40.png",
+		"./gif/gif_41.png",
+		"./gif/gif_42.png",
+		"./gif/gif_43.png",
+		"./gif/gif_44.png",
+		"./gif/gif_45.png",
+		"./gif/gif_46.png",
+		"./gif/gif_47.png",
+		"./gif/gif_48.png",
+		"./gif/gif_49.png",
+		"./gif/gif_50.png",
+		"./gif/gif_51.png",
+		"./gif/gif_52.png",
+		"./gif/gif_53.png",
+		"./gif/gif_54.png",
+		"./gif/gif_55.png",
+		"./gif/gif_56.png"*/
 		
 	];
 
@@ -185,7 +208,7 @@ var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "33%"
 		{
 			curImg: images.length - 1,	// animate propery curImg to number of images
 			roundProps: "curImg",				// only integers so it can be used as an array index
-			repeat: 3,									// repeat 3 times
+			repeat: 1,									// repeat 3 times
 			immediateRender: true,			// load first image automatically
 			ease: Linear.easeNone,			// show every image the same ammount of time
 			onUpdate: function () {
@@ -200,7 +223,7 @@ var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "33%"
 	var controller = new ScrollMagic.Controller();
 
 	// build scene
-	var scene = new ScrollMagic.Scene({triggerElement: "#trigger5", duration: "25%", triggerHook:1, offset:($(window).height()/4)*3})
+	var scene = new ScrollMagic.Scene({triggerElement: "#trigger5", duration: "100%", triggerHook:1})
 					.setTween(tween2)
 					//.addIndicators({name: "PIN"}) // add indicators (requires plugin)
 					.addTo(controller);
@@ -211,7 +234,8 @@ var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "33%"
 		scene.duration($(this).val());
 	});
 
-/* Animation 5 */
+
+/* Animation 5
 var controller = new ScrollMagic.Controller();
 const tween5 = new TimelineLite();
 tween5.add(
@@ -224,3 +248,30 @@ var scene = new ScrollMagic.Scene({triggerElement: "#trigger5", duration: "100%"
 	.setTween(tween5) // the tween durtion can be omitted and defaults to 1
 	
 	.addTo(controller);
+*/
+
+/* Animation SVG 
+function pathPrepare ($el) {
+		var lineLength = $el[0].getTotalLength();
+		$el.css("stroke-dasharray", lineLength);
+		$el.css("stroke-dashoffset", lineLength);
+	}
+
+	var $word = $("path#word");
+
+	// prepare SVG
+	pathPrepare($word);
+
+	// init controller
+	var controller = new ScrollMagic.Controller();
+
+	// build tween
+	var tween6 = new TimelineMax()
+		.add(TweenMax.to($word, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
+		.add(TweenMax.to("path", 1, {stroke: "#33629c", ease:Linear.easeNone}), 0);			// change color during the whole thing
+
+	// build scene
+	var scene = new ScrollMagic.Scene({triggerElement: "#trigger5", duration: "100%", tweenChanges: true, triggerHook:0.3})
+					.setTween(tween6)
+					//.addIndicators() // add indicators (requires plugin)
+					.addTo(controller); */

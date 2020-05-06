@@ -141,16 +141,16 @@ html,body{
 	width: 100%;
 }
 
-/* PAge 5 */
+/* Page 5 */
 .page_5{
 	height: 100%;
 	width: 100%;
-	background-color: #D7C9AA;
+	background-color: #D8E1E9;
     background-size: cover;
 	background-image: url('');
 	background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     overflow: hidden;
     position:relative;
 }
@@ -163,4 +163,14 @@ html,body{
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+}
+
+.centered-image-2{
+   left:50%;
+   top:50%;
+   -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   position:absolute;
+   width: 50%;
 }
